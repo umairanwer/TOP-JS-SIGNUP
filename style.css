@@ -1,0 +1,137 @@
+@font-face {
+    font-family: "Norse-Bold";
+    src: url("https://cdn.statically.io/gh/TheOdinProject/theodinproject/efdc2888072f409e687d31dc580595dbe4fe0ff4/app/assets/fonts/Norse-Bold.otf");
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    background-color: #efefef;
+}
+.page-container{
+    display: flex;
+    align-items: center;
+    
+}
+
+.left-side-container{
+    background-image: url("images/side-logo.jpg");
+    position: relative;
+    background-size:cover;
+    height: 100vh;
+    width: 30vw;
+}
+
+.side-image{
+    width: 100%;
+}
+
+.logo-container{
+    position: absolute;
+    width: 100%;
+    top: 20%;
+    background-color: rgb(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Norse-Bold", sans-serif;
+    font-size: 4rem;
+    color: white;
+}
+
+.logo-container img{
+    height: 100px;
+}
+
+.form-heading{
+    margin-bottom: 20px;
+    font-family: sans-serif;
+}
+.right-side-container{
+    justify-self: stretch;
+    flex: 1;
+    font-family: sans-serif;
+}
+.right-side-container form{
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    gap: 20px;
+    column-gap: 50px;
+    font-family: sans-serif;
+}
+
+.form-element{
+    display: flex;
+    flex-direction: column;
+    text-transform:uppercase;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: rgb(79, 79, 79);
+}
+.form-element input{
+    border: 1px solid #E5E7EB;
+    border-radius: 3px;
+    height: 25px;
+}
+.form-element input:focus{
+    outline-color:cadetblue;
+}
+
+.form-element input:invalid {
+    outline-color: red;
+}
+
+.form-container{
+    padding: 20px;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0px 5px 10px rgb(179, 179, 179);
+}
+.top-text-container{
+    margin-left: 20px;
+    margin-right: 100px;
+}
+.top-text-container p{
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.top-text-container p:last-child{
+    margin-bottom: 50px;
+}
+
+.create-account{
+    margin-left: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    width: 12rem;
+    border-radius: 5px;
+    background-color: rgb(70, 133, 2);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+}
+.account-exists{
+    padding-left: 20px;
+}
+input.error-input{
+    border: 1px solid rgb(206, 1, 1);
+}
+
+.error-input#password::after{
+    content: "aabc";
+}
+
+#passwords-not-matching{
+    visibility: hidden;
+}
+#passwords-not-matching.error-display{
+    visibility: visible;
+    text-transform: none;
+    color: rgb(206, 1, 1);;
+}

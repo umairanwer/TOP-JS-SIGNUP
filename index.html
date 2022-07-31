@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="page-container">
+        <div class="left-side-container">
+
+            <div class="logo-container">
+                <img src="images/odin-lined.png" alt="">
+                <p class="company-name">ODIN</p>
+            </div>
+        </div>
+        <div class="right-side-container">
+            <div class="top-text-container">
+                <p>
+                    This is not a real online service! You know you need something like this in your life to help you
+                    realize your deepest
+                    dreams. <br>
+                    Sign up now to get started.</p>
+                <p>You know you want to.</p>
+            </div>
+            <div class="form-container">
+                <h2 class="form-heading">Lets do this!</h2>
+                <form action="" id="sign-up-form">
+
+                    <div class="form-element">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name">
+                    </div>
+                    <div class="form-element">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name">
+                    </div>
+                    <div class="form-element">
+                        <label for="email">Email</label>
+                        <input type="email" id="email">
+                    </div>
+                    <div class="form-element">
+                        <label for="phone-number">Phone Number</label>
+                        <input type="tel" id="phone-number">
+                    </div>
+                    <div class="form-element">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" class="error-input">
+                        <p id="passwords-not-matching" class="error-display">* Passwords don't match.</p>
+                    </div>
+                    <div class="form-element">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" class="error-input">
+                    </div>
+                </form>
+            </div>
+            <button form="sign-up-form" class="create-account">Create Account</button>
+            <p class="account-exists">Already have an account? <a href="#">Login</a></p>
+        </div>
+    </div>
+</body>
+
+<script>
+    const passwordInp = document.querySelector("#password");
+    const confirmPasswordInp = document.querySelector("#confirm-password");
+    const passwordMatchP = document.querySelector("#passwords-not-matching");
+
+    passwordInp.addEventListener("keyup", passwordChange);
+    confirmPasswordInp.addEventListener("keyup", passwordChange);
+
+    function passwordChange(e) {
+        if (passwordInp.value != "" && confirmPasswordInp.value != "") {
+            if (passwordInp.value != confirmPasswordInp.value) {
+                console.log("not matching");
+                passwordInp.classList.add("error-input");
+                confirmPasswordInp.classList.add("error-input");
+                passwordMatchP.classList.add("error-display");
+            }
+            else {
+                console.log("matching");
+                passwordInp.classList.remove("error-input");
+                confirmPasswordInp.classList.remove("error-input");
+                passwordMatchP.classList.remove("error-display");
+            }
+        }
+    }
+</script>
+
+</html>
